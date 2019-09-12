@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="registerclients.css">
+</head>
+
+<body>
+  <video autoplay muted loop id="myVideo">
+  <source src="video1.mp4" type="video/mp4" >
+  </video>
+
+  <div class="content">
+  <p>
+    <form method="post" action="user.php">
+    <div id="signuppage">
+    <img src="logosample1.jpg" height="100" width="300">
+    <h1>SIGN UP WITH US TODAY</h1>
+    <table class = "table table-dark" align="center"">
+  <tr>
+    <td colspan="1"><?php echo @$error; ?></td>
+  </tr> 
+  <tr>
+    <td width="230">Enter Your Firstname </td>
+    <td width="329"><input type="text" name="firstname"/></td>
+  </tr>
+  <tr>
+    <td width="230">Enter Your Lastname </td>
+    <td width="329"><input type="text" name="lastname"/></td>
+  </tr>
+  <tr>
+    <td width="230">Enter Your username </td>
+    <td width="329"><input type="text" name="username"/></td>
+  </tr>
+  
+  <tr>
+    <td>Enter Your Email </td>
+    <td><input type="text" name="email"/></td>
+  </tr>
+  
+  <tr>
+    <td>Enter Your Phonenumber </td>
+    <td><input type="text" name="phonenumber"/></td>
+  </tr>
+  <tr>
+    <td width="230">Enter Your Password</td>
+    <td width="329"><input type="password" name="password"/></td>
+  </tr>
+
+  <tr>
+    <td>Confirm your password</td>
+    <td><input type="password" name="confirmpassword"/></td>
+  </tr>
+  
+  <tr>
+    <td colspan="1" align="center">
+  <input type="submit" name="register" value="Create Account"/></td>
+  </tr>
+</table>
+  </p>
+  <button id="myBtn" onclick="myFunction()">Browse Items </button>
+</div>
+</div>
+  <script>
+      var video = document.getElementById("myVideo");
+      var btn = document.getElementById("myBtn");
+      function myFunction() 
+      {
+          video.play(); 
+      }
+  </script>
+	</form>
+</body>
+</html>
