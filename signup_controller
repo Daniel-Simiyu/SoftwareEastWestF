@@ -1,0 +1,34 @@
+<?php
+  public function signup()
+      {
+      	$this->load->view('signuppage');
+      }
+
+	      public function __construct()
+		{
+		parent::__construct();
+		//$this->load->database('eastwestfashion');
+		$this->load->model('Hello_Model');
+		}
+
+		public function savedata()
+		{
+			//load registration view form
+			//$this->load->view('signuppage');
+			//Check submit button 
+			if($this->input->post('submit'))
+			{
+				//get form's data and store in local varable
+				$fn = $this->input->post('firstname');
+				$ln = $this->input->post('lastname');
+				$un = $this->input->post('username');
+				$ea = $this->input->post('emailaddress');
+				$pass=$this->input->post('password');			
+		        //call saverecords method of Hello_Model and pass variables as parameter
+				$this->Hello_Model->saverecords($fn,$ln,$un,$ea,$pass);	
+					
+				echo "Records Saved Successfully";
+			}
+		}
+
+?>
