@@ -1,0 +1,16 @@
+<?php
+class Hello_Model extends CI_Model 
+{
+	 public function __construct()
+		{
+		$this->load->database();
+		}
+
+	public function saverecords($fname,$lname,$username,$email,$password)
+	{
+	$query="INSERT INTO `signupdetails`(`firstname`, `lastname`, `username`, `email`, `password`, `userid`) VALUES ('$fname','$lname','$username','$email','$password','')";
+	$this->db->query($query);
+
+	}
+}
+?>
