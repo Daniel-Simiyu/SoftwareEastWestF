@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Signuppage</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<body>
+	      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		  <a class="navbar-brand" href="#">EW-FASHIONS</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+		  <span class="navbar-toggler-icon"></span>
+		  </button>
+		    <div class="collapse navbar-collapse" id="navbarText">
+		    <ul class="navbar-nav mr-auto">
+		    <li class="nav-item active">
+		        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+		    </li>
+
+		      <li class="nav-item">
+		        <a class="nav-link" href="#">Cart</a>
+		      </li>
+		     	<div class="dropdown">
+ 				<li class="nav-item">
+ 				 <a class="nav-link" href="#">Contact Us</a>
+ 				</li>
+  			</div> 
+		    </ul>
+    			<a href="#">Log In</a>
+  				</div>
+			</div> 
+				</div>
+		  </div>
+</nav>
+				<?php echo form_open('Hello/savedata')?>
+
+				<div class="row p-3 justify-content-center">
+					<div class="col-md-6">
+						<div class="card">
+							<div class="card-header bg-dark text-light text-center">
+								SIGN UP 
+							</div>
+							<div class="card-body">
+									<div class="wrap-input100 validate-input p-2" data-validate = "Enter name">
+						<input class="form-control" type="text" name="firstname" placeholder="FirstName">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input p-2" data-validate = "Enter lastname">
+						<input class="form-control" type="text" name="lastname" placeholder="LastName">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input p-2" data-validate = "Enter username">
+						<input class="form-control" type="text" name="username" placeholder="Username">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input p-2" data-validate = "Enter Email">
+						<input class="form-control" type="email" name="emailaddress" placeholder="Email Address">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input p-2" data-validate="Enter password">
+						<input class="form-control" type="password" name="password" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-32 text-center">
+						<input type="submit" class="login100-form-btn btn btn-success btn-lg" name="submit">
+						<br>
+					</div>
+				</form>
+			</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+	</body>
+</html>
+
+<style type="text/css">
+	.
+</style>
