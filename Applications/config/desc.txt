@@ -1,0 +1,6 @@
+/*
+
+
+Daniel MSDHD
+
+---All config folders are stored in this folder----
