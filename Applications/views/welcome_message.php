@@ -1,97 +1,89 @@
-<!DOCTYPE html>
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?><!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Shopping cart</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-rel="stylesheet" id="bootstrap-css">
+	<meta charset="utf-8">
+	<title>Welcome to CodeIgniter</title>
+
+	<style type="text/css">
+
+	::selection { background-color: #E13300; color: white; }
+	::-moz-selection { background-color: #E13300; color: white; }
+
+	body {
+		background-color: #fff;
+		margin: 40px;
+		font: 13px/20px normal Helvetica, Arial, sans-serif;
+		color: #4F5155;
+	}
+
+	a {
+		color: #003399;
+		background-color: transparent;
+		font-weight: normal;
+	}
+
+	h1 {
+		color: #444;
+		background-color: transparent;
+		border-bottom: 1px solid #D0D0D0;
+		font-size: 19px;
+		font-weight: normal;
+		margin: 0 0 14px 0;
+		padding: 14px 15px 10px 15px;
+	}
+
+	code {
+		font-family: Consolas, Monaco, Courier New, Courier, monospace;
+		font-size: 12px;
+		background-color: #f9f9f9;
+		border: 1px solid #D0D0D0;
+		color: #002166;
+		display: block;
+		margin: 14px 0 14px 0;
+		padding: 12px 10px 12px 10px;
+	}
+
+	#body {
+		margin: 0 15px 0 15px;
+	}
+
+	p.footer {
+		text-align: right;
+		font-size: 11px;
+		border-top: 1px solid #D0D0D0;
+		line-height: 32px;
+		padding: 0 10px 0 10px;
+		margin: 20px 0 0 0;
+	}
+
+	#container {
+		margin: 10px;
+		border: 1px solid #D0D0D0;
+		box-shadow: 0 0 8px #D0D0D0;
+	}
+	</style>
 </head>
 <body>
 
-<div class="container">
+<div id="container">
+	<h1>Welcome to CodeIgniter!</h1>
 
-<button class="btn btn-primary pull-right" data-toggle="modal" data-target="#exampleModal" 
-onclick="opencart()" >
-    <span>
-      Cart ( <span class="cartcount"><?php echo count($this->cart->contents());  ?></span> )
-    </span>
-</button>
+	<div id="body">
+		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+
+		<p>If you would like to edit this page you'll find it located at:</p>
+		<code>application/views/welcome_message.php</code>
+
+		<p>The corresponding controller for this page is found at:</p>
+		<code>application/controllers/Welcome.php</code>
+
+		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+	</div>
+
+	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
-
-
-<div class="container catalog-grid">
-<div class="row">
-      <?php 
-      if(isset($products) && is_array($products) && count($products)){
-      $i=1;
-      foreach ($products as $key => $data) { 
-      ?>
-        <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="tile">
-            <div class="price-label price<?php echo $data['id'] ?>" 
-rel="<?php echo $data['price'] ?>">Kshs <?php echo $data['price'] ?></div>
-            <img class="image<?php echo $data['id'] ?>" rel="<?php echo $data['image'] ?>" height="400px" width="400px"
-              src="<?php echo base_url(); ?>/images/<?php echo $data['image'] ?>" 
-alt="<?php echo $data['id'] ?>">
-            <span class="tile-overlay"></span>
-          <div class="footer">
-            <p class="name<?php echo $data['id'] ?>" 
-rel="<?php echo $data['id'] ?>"><?php echo $data['name'] ?></p>
-            <button class="btn btn-primary"  onclick="addtocart(<?php echo $data['id'] ?>)">Add to Cart</button>
-         
-          </div>
-        </div>
-      </div>
-      <?php
-        $i++;
-          } }
-        ?>
-</div>
-</div>
-
-<div class="modal fade bs-example-modal-lg displaycontent" id="exampleModal" tabindex="-1" >
-
-</div>
-
-
-
-<script type="text/javascript">
-
-    function addtocart(p_id)
-    {
-      
-        var price = $('.price'+p_id).attr('rel');
-        var image = $('.image'+p_id).attr('rel');
-        var name  = $('.name'+p_id).text();
-        var id    = $('.name'+p_id).attr('rel');
-
-            $.ajax({
-                    type: "POST",
-                    url: "<?php echo base_url();?>index.php/welcome/add?itemID=<?php echo $data['id'] ?>",
-                    data: "id="+id+"&image="+image+"&name="+name+"&price="+price,
-                    success: function (response) {
-                       $(".cartcount").text(response);
-                    }
-                });
-    }
-
-  function opencart()
-  {
-      $.ajax({
-                  type: "POST",
-                  url: "<?php echo base_url();?>index.php/welcome/opencart",
-                  data: "",
-                  success: function (response) {
-                  $("#exampleModal").html(response);
-                  }
-              });
-  }
-  
-
-</script>
 
 </body>
 </html>
